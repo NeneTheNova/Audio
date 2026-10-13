@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio - Muted</title>
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            font-family: Arial, sans-serif;
+            background: #111827;
+            color: white;
+        }
+        nav { width: 180px; padding: 24px 16px; background: #1f2937; }
+        nav a { display: block; padding: 10px; color: white; text-decoration: none; border-radius: 6px; }
+        nav a:hover, nav a[aria-current="page"] { background: #374151; }
+        main { flex: 1; display: grid; place-items: center; }
+        .player { padding: 24px 28px; border-radius: 16px; background: #1f2937; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25); }
+        audio { width: 300px; }
+        .description { max-width: 300px; margin-bottom: 0; color: white; line-height: 1.5; }
+        @media (max-width: 500px) {
+            body { flex-direction: column; }
+            nav { box-sizing: border-box; width: 100%; display: flex; flex-wrap: wrap; gap: 4px; }
+            main { min-height: 60vh; }
+        }
+    </style>
+</head>
+<body>
+    <nav aria-label="Audio examples">
+        <a href="index.html">Home</a>
+        <a href="autoplay.html">Autoplay</a>
+        <a href="controls.html">Controls</a>
+        <a href="loop.html">Loop</a>
+        <a href="muted.html" aria-current="page">Muted</a>
+        <a href="preload.html">Preload</a>
+        <a href="https://nenethenova.github.io/Nene-Portfolio">Click to Enter (autoplay, example)</a>
+    </nav>
+    <main>
+        <div class="player">
+            <audio controls muted src="suzume.mp3"></audio>
+            <p class="description"><strong>muted</strong> starts the audio with its sound turned off. Use the player's volume control to unmute it.</p>
+        </div>
+    </main>
+</body>
+</html>

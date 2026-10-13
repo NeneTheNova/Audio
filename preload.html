@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio - Preload</title>
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            font-family: Arial, sans-serif;
+            background: #111827;
+            color: white;
+        }
+        nav { width: 180px; padding: 24px 16px; background: #1f2937; }
+        nav a { display: block; padding: 10px; color: white; text-decoration: none; border-radius: 6px; }
+        nav a:hover, nav a[aria-current="page"] { background: #374151; }
+        main { flex: 1; display: grid; place-items: center; }
+        .player { padding: 24px 28px; border-radius: 16px; background: #1f2937; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25); }
+        audio { width: 300px; }
+        .content { width: min(600px, calc(100% - 40px)); padding: 32px 0; }
+        .details { margin-top: 20px; padding: 20px 24px; border-radius: 12px; background: #1f2937; line-height: 1.5; }
+        .details h1 { margin-top: 0; }
+        .details li { margin-bottom: 8px; }
+        @media (max-width: 500px) {
+            body { flex-direction: column; }
+            nav { box-sizing: border-box; width: 100%; display: flex; flex-wrap: wrap; gap: 4px; }
+            main { min-height: 60vh; }
+        }
+    </style>
+</head>
+<body>
+    <nav aria-label="Audio examples">
+        <a href="index.html">Home</a>
+        <a href="autoplay.html">Autoplay</a>
+        <a href="controls.html">Controls</a>
+        <a href="loop.html">Loop</a>
+        <a href="muted.html">Muted</a>
+        <a href="preload.html" aria-current="page">Preload</a>
+        <a href="https://nenethenova.github.io/Nene-Portfolio">Click to Enter (autoplay, example)</a>
+    </nav>
+    <main>
+        <div class="content">
+            <div class="player">
+                <audio controls preload="auto" src="suzume.mp3"></audio>
+            </div>
+            <section class="details">
+                <h1>Preload options</h1>
+                <p><code>preload</code> hints to the browser how much audio to load before playback. It does not start the audio.</p>
+                <ul>
+                    <li><strong>auto</strong> — the browser may download the audio ahead of time.</li>
+                    <li><strong>metadata</strong> — load basic information, such as the duration, without downloading the entire audio.</li>
+                    <li><strong>none</strong> — do not preload audio data; wait until playback is requested.</li>
+                </ul>
+                <p>The browser may choose how much to preload, so these values are suggestions.</p>
+            </section>
+        </div>
+    </main>
+</body>
+</html>
